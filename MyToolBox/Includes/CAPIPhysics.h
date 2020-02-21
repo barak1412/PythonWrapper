@@ -5,3 +5,4 @@
 #endif
 
 EXTERNC float gforce_api(float weight);
+EXTERNC void velocity_api(float v0, float a, float t, float* v);
