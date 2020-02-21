@@ -1,2 +1,2 @@
 # PythonWrapper
-Example of wrapping c++ project in python.
+Example of wrapping C\C++ project in python.
