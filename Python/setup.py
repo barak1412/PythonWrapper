@@ -1,4 +1,12 @@
 from setuptools import setup, Extension
+import os
+
+def generate_sources_lst():
+	sources = ["my_physics.bycython.cpp"]
+	sources_dirs = ["MyToolBox/Source/", "MathematicsOps/Source/"]
+	for source_dir in sources_dirs:
+		sources += [os.path.join(source_dir, f) for f in os.listdir(source_dir) if f.endswith(".cpp") or f.endswith(".c")]
+	return sources
 
 setup(
     # Information
@@ -9,8 +17,7 @@ setup(
     keywords = "Simple gravity calulator.",
     # Build instructions
     ext_modules = [Extension("my_physics",
-                             ["my_physics.bycython.cpp", "MathematicsOps/Source/mathematics_ops.cpp",
-							 "MyToolBox/Source/physics.cpp", "MyToolBox/Source/CAPIPhysics.cpp"],
-                             include_dirs=["MathematicsOps/Includes", "MyToolBox/Includes"],
+                             sources=generate_sources_lst(),
+							 include_dirs=["MathematicsOps/Includes", "MyToolBox/Includes"],
 							 language="c++")]
 )
