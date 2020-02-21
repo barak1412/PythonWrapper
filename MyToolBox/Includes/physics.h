@@ -1,0 +1,2 @@
+
+float gforce(float weight);

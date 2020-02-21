@@ -1,0 +1,4 @@
+recursive-include MathematicsOps/Includes *
+recursive-include MyToolBox/Includes *
+include *.pxd
+include *.pyx
