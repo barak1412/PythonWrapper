@@ -18,3 +18,9 @@ build: ${BUILD_FILES}
 
 sdist: mathematics_ops physics_ops my_physics.bycython.cpp setup.py MANIFEST.in
 	python setup.py sdist
+
+clean:
+	rd /S /Q ".\MathematicsOps"
+	rd /S /Q ".\PhysicsOps"
+	rd /S /Q ".\my_physics.egg-info"
+	del ".\my_physics.bycython.cpp"
